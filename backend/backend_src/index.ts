@@ -6,7 +6,7 @@ const server = fastify({ logger: true });
 server.register(cors, { origin: "http://localhost:5173", methods:["GET", "POST"],});
 
 //draw lot
-server.get('/api/draw-lot', async (request, reply) => {
+server.get('/api/draw-lot', async (request: FastifyRequest, reply: FastifyReply) => {
   try {
 
     //throw new Error("Simulated server error");
@@ -21,7 +21,7 @@ server.get('/api/draw-lot', async (request, reply) => {
 });
 
 // Global error handler
-server.setErrorHandler((error, request: FastifyRequest, reply: FastifyReply) => {
+server.setErrorHandler((error: Error, request: FastifyRequest, reply: FastifyReply) => {
   server.log.error(error);  // Log the error
 
   // Respond with a generic error message
