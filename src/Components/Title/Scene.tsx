@@ -1,6 +1,5 @@
 import { OrthographicCamera } from "@react-three/drei";
 import { Color } from "three";
-import useSpline from "@splinetool/r3f-spline";
 import { GroupProps } from "@react-three/fiber";
 import ParticleSystem from "./ParticleSystem";
 
@@ -8,10 +7,6 @@ import ParticleSystem from "./ParticleSystem";
 interface SceneProps extends GroupProps {}
 
 export default function Scene({ ...props }: SceneProps) {
-  const splineData = useSpline(
-    "https://prod.spline.design/3lhEG8UGHfLoesvS/scene.splinecode"
-  );
-
   return (
     <>
       <color attach="background" args={[new Color("#000000")]} />
