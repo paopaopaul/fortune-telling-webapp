@@ -11,4 +11,5 @@
     "skipLibCheck": true,
   },
   "include": ["backend_src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
