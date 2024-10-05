@@ -34,8 +34,9 @@ server.setErrorHandler((error, request: FastifyRequest, reply: FastifyReply) => 
 // Start server
 const start = async () => {
   try {
-    await server.listen({ port: 3001 });
-    console.log('Server is running at http://localhost:3001');
+    const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001; // Ensure process.env.PORT is parsed to a number
+    await server.listen({ port, host: '0.0.0.0' }); // Host set to '0.0.0.0'
+    console.log(`Server is running at http://localhost:${port}`);
   } catch (err) {
     server.log.error(err);
     process.exit(1);
