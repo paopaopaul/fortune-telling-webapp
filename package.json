@@ -11,7 +11,11 @@
     "dev": "vite",
     "dev:backend": "cd backend && ts-node src/index.ts",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "npm install --only=dev"
+  },
+  "engines": {
+    "node": ">=18.x"
   },
   "dependencies": {
     "@fastify/cors": "^10.0.1",
