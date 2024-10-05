@@ -4,35 +4,34 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "clean": "rimraf backend/dist && rimraf backend/tsconfig.backend.tsbuildinfo && rimraf dist && rimraf tsconfig.app.tsbuildinfo && rimraf tsconfig.node.tsbuildinfo",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:frontend": "tsc -b && vite build",
+    "build:backend": "tsc -p backend/tsconfig.backend.json",
+    "start:backend": "node backend/dist/index.js",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev:backend": "cd backend && ts-node src/index.ts",
     "lint": "eslint .",
-    "start": "ts-node index.ts",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fastify/cors": "^10.0.1",
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.9",
-    "@splinetool/loader": "^1.9.28",
-    "@splinetool/r3f-spline": "^1.0.2",
-    "@types/three": "^0.169.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "fastify": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "three": "^0.169.0",
-    "three-mesh-bvh": "^0.8.2"
+    "three": "^0.169.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
-    "@types/react": "^18.3.3",
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
   }
 }
