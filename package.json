@@ -9,7 +9,7 @@
     "build:backend": "tsc -p backend/tsconfig.backend.json",
     "start:backend": "node backend/dist/index.js",
     "dev": "vite",
-    "dev:backend": "cd backend && ts-node src/index.ts",
+    "dev:backend": "cd backend && ts-node backend_src/index.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
