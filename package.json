@@ -2,7 +2,6 @@
   "name": "fortune-telling-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "clean": "rimraf backend/dist && rimraf backend/tsconfig.backend.tsbuildinfo && rimraf dist && rimraf tsconfig.app.tsbuildinfo && rimraf tsconfig.node.tsbuildinfo",
     "build": "npm run build:backend && npm run build:frontend",
