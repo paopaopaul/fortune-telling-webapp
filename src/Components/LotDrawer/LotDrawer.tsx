@@ -17,9 +17,8 @@ function LotDrawer() {
   const drawLot = async () => {
     setError(null);
     try {
-      const response = await fetch(
-        "${process.env.VITE_APP_API_URL}/api/draw-lot"
-      );
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${apiUrl}/api/draw-lot)`);
       if (!response.ok) {
         throw new Error("Failed to fetch fortune. Please try again.");
       }
