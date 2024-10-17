@@ -18,7 +18,7 @@ function LotDrawer() {
     setError(null);
     try {
       const response = await fetch(
-        "https://fortune-telling-webapp.onrender.com"
+        "${process.env.VITE_APP_API_URL}/api/draw-lot"
       );
       if (!response.ok) {
         throw new Error("Failed to fetch fortune. Please try again.");
