@@ -17,7 +17,9 @@ function LotDrawer() {
   const drawLot = async () => {
     setError(null);
     try {
-      const response = await fetch("http://localhost:3001/api/draw-lot");
+      const response = await fetch(
+        "https://fortune-telling-webapp.onrender.com"
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch fortune. Please try again.");
       }
