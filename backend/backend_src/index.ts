@@ -7,7 +7,7 @@ console.log('Starting server initialization...');
 const server = fastify({ logger: true });
 console.log('Fastify instance created');
 
-server.register(cors, { origin: "fortune-telling-webapp.vercel.app", methods: ["GET", "POST"] });
+server.register(cors, { origin: "https://fortune-telling-webapp.vercel.app", methods: ["GET", "POST"] });
 console.log('CORS middleware registered');
 
 //draw lot
